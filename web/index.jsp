@@ -29,7 +29,7 @@
                     <a href="/menu" class="espacio-derecha">Acerca de</a>
                 </nav>
                 <p>
-                   proyecto para brindar soporte 
+                   Proyecto para brindar soporte 
                 </p>
             </div>
         </div>
