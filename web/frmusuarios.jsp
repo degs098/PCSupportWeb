@@ -1,6 +1,6 @@
 <%-- 
-    Document   : frmhardware
-    Created on : 6/02/2016, 10:11:27 PM
+    Document   : frmusuarios
+    Created on : 7/02/2016, 09:13:20 AM
     Author     : Pernett98
 --%>
 
@@ -25,28 +25,39 @@
 		</ul>
 	</nav>
         <div class="col-md-4 center-block quitar-float espacio-arriba text-left">
-            <h1>Agregar caso</h1>
+            <h1>Reistro de usuario</h1>
             <form method="post" action="" style="margin-top:1.5em;" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label>Id del caso</label>
-                    <input type="number" name="id" placeholder="id del caso" class="form-control">
+                    <label>Usuario</label>
+                    <input type="number" name="id" placeholder="usuario" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>Caso</label>
-                    <textarea name="caso" placeholder="Descripsion del caso" class="form-control"></textarea>
+                    <label>Nombre</label>
+                    <input type="number" name="nombre" placeholder="nombres" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>Solucion</label>
-                    <textarea name="solucion" placeholder="Solucion del caso" class="form-control"></textarea>
+                    <label>Clave</label>
+                    <input type="password" name="clave" placeholder="clave" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>Imagenes</label>
-                    <input type="file" name="imagen_hardware" placeholder="imagenes" class="form-control">
+                    <label>Estado</label>
+                    <select name="estado" class="form-control" >
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Perfil</label>
+                    <select name="estado" class="form-control" >
+                        <option value="administrador">Administrador</option>
+                        <option value="soporte">Soporte</option>
+                        <option value="usuario">Usuario</option>
+                    </select>
                 </div>
                 <div class="form-group text-right">
                     <input type="submit" class="btn btn-info" value="Guardar">
                 </div>
             </form>
-        </div>        
+        </div>
     </body>
 </html>
