@@ -3,26 +3,27 @@ package com.project.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+import oracle.jdbc.driver.OracleDriver;
 
 /**
  *
  * @author samsung
  */
-public class Conexion {
+public class Conexion {      
 
-    protected Connection conexion;
-    
-    private final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private final String DB_URL = "jdbc:oracle:thin:@localhost:1521:xe";
-    private final String USER = "PC_Support";
-    private final String PASSWORD = "123";
+    public Connection conexion;       
+           
+    private String USER = "PC_Support";
+    private String PASSWORD = "123";
+    private String HOST = "localhost";
+    private String PORT = "1521";
+    private String SID =  "xe";    
     
     public void conectarDB() throws Exception{
         try{
-            Connection conexion = DriverManager.getConnection(DB_URL, USER, PASSWORD);
-            Class.forName(JDBC_DRIVER);
-            System.out.println("Hecho!");
+            OracleDriver oracleDriver = new OracleDriver();
+            DriverManager.registerDriver(oracleDriver);
+            DriverManager.getConnection("jdbc:oracle:thin:@" + HOST + ":" + PORT + ":" + SID, USER, PASSWORD);            
         }catch(Exception e){
             System.out.println(e);
         }
@@ -35,5 +36,14 @@ public class Conexion {
             }
         }
     }
+    
+    public static void main(String[] args){
+        Conexion con = new Conexion();
+        try {
+            con.conectarDB();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }    
     
 }

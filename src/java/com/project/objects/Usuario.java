@@ -18,8 +18,7 @@ public class Usuario {
         this.clave = clave;
         this.estado = estado;
         this.perfil = perfil;
-    }
-   
+    }   
 
     public String getUserName() {
         return userName;

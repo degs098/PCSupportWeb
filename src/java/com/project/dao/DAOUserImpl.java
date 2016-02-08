@@ -17,13 +17,14 @@ public class DAOUserImpl extends Conexion implements DAOUser{
         
         try{
             this.conectarDB();
-            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO TBLUSUARIO(USUARIO) VALUES (?,?,?,?,?)");
+            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO TBLUSUARIO (USUARIO,NOMBRE,CLAVE,ESTADO,PERFIL) VALUES (?,?,?,?,?)");
             st.setString(1, user.getUserName());
             st.setString(2, user.getNombre());
             st.setString(3, user.getClave());
             st.setString(4, user.getEstado());
             st.setString(5, user.getPerfil());
             st.executeQuery();
+            System.out.println("Guardado!");
         }catch(Exception e){
             System.out.println(e);
         }finally{
